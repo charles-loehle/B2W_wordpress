@@ -29,7 +29,7 @@
 <footer>
   <div class="container">
     <div class="col-sm-3">
-      <p><a href="/"><img src="assets/img/cldigitaldesign-logo2.png" alt="bootstrap to wordpress"></a></p>
+      <p><a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/cldigitaldesign-logo2.png" alt="bootstrap to wordpress"></a></p>
     </div><!-- /col -->
     <div class="col-sm-6">
       <nav>
@@ -83,11 +83,10 @@
 </div><!-- /.modal -->
 
 <!-- BOOTSTRAP CORE JAVASCRIPT placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-
-<script src="<?php bloginfo('template_directory'); ?>assets/js/bootstrap.min.js"></script>
-
-<script src="<?php bloginfo('template_directory'); ?>assets/js/main.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- <script src="<?php bloginfo('template_directory'); ?>/assets/js/jquery-2.1.1.min.js"></script> -->
+<script src="<?php bloginfo('template_directory'); ?>/assets/js/bootstrap.min.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/assets/js/main.js"></script>
 
 </body>
 </html>
