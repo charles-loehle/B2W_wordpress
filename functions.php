@@ -95,8 +95,8 @@ function cldigitaldesign_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'cldigitaldesign' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
 }
 add_action( 'widgets_init', 'cldigitaldesign_widgets_init' );
@@ -141,3 +141,34 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Replaces the excerpt "more" text by a link.
+ */
+function new_excerpt_more($more) {
+    global $post;
+	return '... <a class="moretag" href="'. get_permalink($post->ID) . '"> continue reading &raquo;</a>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
+//To remove Category: Tag: Author: taxonomy for use with the_archive_title
+
+add_filter( 'get_the_archive_title', function ($title) {
+
+if ( is_category() ) {
+
+$title = single_cat_title( '', false );
+
+} elseif ( is_tag() ) {
+
+$title = single_tag_title( '', false );
+
+} elseif ( is_author() ) {
+
+$title = '<span class="vcard">' . get_the_author() . '</span>' ;
+
+}
+
+return $title;
+
+});

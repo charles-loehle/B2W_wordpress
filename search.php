@@ -7,42 +7,51 @@
  * @package CL_Digital_Design
  */
 
-get_header(); ?>
+	get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
-		<?php
-		if ( have_posts() ) : ?>
-
-			<header class="page-header">
+		<section class="feature-image feature-image-default-alt" data-type="background" data-speed="2">
 				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'cldigitaldesign' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
+		</section>
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+		<div class="container">
+			<div id="primary" class="row">
+				<main id="content" class="col-sm-8">
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
+					<?php
+					if ( have_posts() ) : ?>
 
-			endwhile;
 
-			the_posts_navigation();
+						<?php
+						/* Start the Loop */
+						while ( have_posts() ) : the_post();
 
-		else :
+							/**
+							 * Run the loop for the search to output the results.
+							 * If you want to overload this in a child theme then include a file
+							 * called content-search.php and that will be used instead.
+							 */
+							get_template_part( 'template-parts/content', 'search' );
 
-			get_template_part( 'template-parts/content', 'none' );
+						endwhile;
 
-		endif; ?>
+						the_posts_navigation();
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+					else :
 
-<?php
-get_sidebar();
-get_footer();
+						get_template_part( 'template-parts/content', 'none' );
+
+					endif; ?>
+
+				</main><!-- #content -->
+
+				<!-- SIDEBAR
+			 	=====================================-->
+				<aside class="col-sm-4">
+					<?php get_sidebar(); ?>
+				</aside>
+
+			</div><!-- .row -->
+		</div><!-- .container -->
+
+	<?php
+	get_footer();

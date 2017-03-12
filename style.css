@@ -1,4 +1,4 @@
-/*
+ /*
 Theme Name: CL Digital Design
 Theme URI: http://underscores.me/
 Author: Charles Loehle
@@ -70,6 +70,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+.navbar-nav > li.current_page_item a,
+.navbar-nav > li.current_page_parent a {
+	color: white;
+}
 
 /* Small menu. */
 .menu-toggle,
@@ -215,6 +219,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
+.archive-description {
+	color: white;
+	float: left;
+}
+
 .sticky {
 	display: block;
 }
@@ -242,6 +251,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+.page-title {
+	color: inherit;
 }
 
 /*--------------------------------------------------------------
@@ -397,6 +410,7 @@ h1 {
   font-size: 3em;
   color: white;
 }
+
 
 h1,h2 {
   margin: 0 0 40px;
@@ -787,9 +801,10 @@ footer li.signup-link a:hover {
 
 .post header h1 {
   font-size: 24px;
+	color: inherit;
 }
 
-.post-image {
+.post-image img {
   height: auto;
 }
 
@@ -903,6 +918,20 @@ footer li.signup-link a:hover {
   margin: 40px 0 0;
   padding: 20px 0 0;
   border-top: solid 1px #eee;
+}
+
+/* specific WP comment styles */
+#comments footer {
+	background: none;
+	color: inherit;
+}
+
+#comments footer a {
+	color: inherit;
+}
+
+#comments .comment-metadata {
+	margin:; 10px 0 0;
 }
 
 /* === RESOURCES == */
