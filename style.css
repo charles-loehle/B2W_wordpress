@@ -677,7 +677,7 @@ section h3 {
 }
 
 #instructor {
-  background: white url('assets/img/brad-elvis.png') 90% -10px no-repeat;
+  background: white;
 }
 
 #instructor h2 {
@@ -825,6 +825,13 @@ footer li.signup-link a:hover {
 
 .widget {
   padding: 20px;
+	border: solid 1px #ddd;
+  background: white;
+  margin: 0 0 40px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+
 }
 
 .widget h4 {
